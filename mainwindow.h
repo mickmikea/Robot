@@ -33,6 +33,8 @@ private slots:
 
     void on_stopMotorsControl_clicked();
 
+    void on_cameraMovementSlider_sliderMoved(int position);
+
 private:
     Ui::MainWindow *ui;
 };

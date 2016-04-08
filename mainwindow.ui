@@ -17,18 +17,8 @@
    <layout class="QGridLayout" name="gridLayout">
     <item row="2" column="1" rowspan="3">
      <layout class="QGridLayout" name="gridLayout_3">
-      <item row="0" column="1">
-       <widget class="QSlider" name="verticalSlider">
-        <property name="minimum">
-         <number>-100</number>
-        </property>
-        <property name="maximum">
-         <number>100</number>
-        </property>
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
-        </property>
-       </widget>
+      <item row="0" column="0" rowspan="3">
+       <widget class="QColumnView" name="columnView"/>
       </item>
       <item row="0" column="2">
        <widget class="QLabel" name="percentPowerlabel">
@@ -43,10 +33,7 @@
         </property>
        </widget>
       </item>
-      <item row="0" column="0" rowspan="2">
-       <widget class="QColumnView" name="columnView"/>
-      </item>
-      <item row="1" column="1" colspan="2">
+      <item row="2" column="1" colspan="2">
        <widget class="QSlider" name="cameraMovementSlider">
         <property name="minimum">
          <number>-100</number>
@@ -59,6 +46,26 @@
         </property>
         <property name="tickPosition">
          <enum>QSlider::TicksBelow</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QSlider" name="verticalSlider">
+        <property name="minimum">
+         <number>-100</number>
+        </property>
+        <property name="maximum">
+         <number>100</number>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1" colspan="2" alignment="Qt::AlignHCenter">
+       <widget class="QLabel" name="cameraPositionLabel">
+        <property name="text">
+         <string>0</string>
         </property>
        </widget>
       </item>

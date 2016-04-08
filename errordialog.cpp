@@ -8,9 +8,9 @@ errordialog::errordialog(QWidget *parent) :
     ui->setupUi(this);
 }
 
-void errordialog::setText(QString text)
+void errordialog::setText(int code)
 {
-    ui->messageText->setText(text);
+    ui->messageText->setText(errorCodes[code]);
 }
 
 errordialog::~errordialog()

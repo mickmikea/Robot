@@ -16,3 +16,7 @@ void connection::setLeftMotorState(bool state)
 {
 
 }
+void connection::setCameraPosition(int location)
+{
+
+}

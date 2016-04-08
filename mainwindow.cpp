@@ -28,10 +28,11 @@ void MainWindow::on_actionConnect_triggered()//"connect" menubar item
     loginDialog login_dialog;
     login_dialog.setModal(true);
     if (login_dialog.exec() == true){
-        if (connection::connect() != 0){
+        int connectionCode = connection::connect();
+        if (connectionCode != 0){
             errordialog error_dialog;
             error_dialog.setModal(true);
-            error_dialog.setText("test");
+            error_dialog.setText(connectionCode);
             error_dialog.exec();
         }
     }
@@ -61,4 +62,10 @@ void MainWindow::on_stopMotorsControl_clicked()
 {
     connection::setLeftMotorState(false);
     connection::setRightMotorState(false);
+}
+
+void MainWindow::on_cameraMovementSlider_sliderMoved(int position)
+{
+    ui->cameraPositionLabel->setText(QString::number(position));
+    connection::setCameraPosition(position);
 }

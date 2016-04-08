@@ -44,14 +44,20 @@
   <widget class="QLabel" name="messageText">
    <property name="geometry">
     <rect>
-     <x>50</x>
+     <x>80</x>
      <y>20</y>
-     <width>321</width>
-     <height>16</height>
+     <width>311</width>
+     <height>121</height>
     </rect>
    </property>
    <property name="text">
     <string/>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+   </property>
+   <property name="wordWrap">
+    <bool>true</bool>
    </property>
   </widget>
  </widget>
@@ -64,12 +70,12 @@
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>248</x>
-     <y>254</y>
+     <x>258</x>
+     <y>174</y>
     </hint>
     <hint type="destinationlabel">
      <x>157</x>
-     <y>274</y>
+     <y>199</y>
     </hint>
    </hints>
   </connection>
@@ -80,12 +86,12 @@
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>316</x>
-     <y>260</y>
+     <x>326</x>
+     <y>180</y>
     </hint>
     <hint type="destinationlabel">
      <x>286</x>
-     <y>274</y>
+     <y>199</y>
     </hint>
    </hints>
   </connection>
