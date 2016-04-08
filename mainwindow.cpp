@@ -1,8 +1,8 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "logindialog.h"
-#include "connectionfunctions.h"
 #include "errordialog.h"
+#include "connectionfunctions.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -14,10 +14,7 @@ MainWindow::MainWindow(QWidget *parent) :
 MainWindow::~MainWindow(){
     delete ui;
 }
-void MainWindow::on_RightMotorControl_pressed()
-{
-    std::cout << "right motor pressed";
-}
+
 void MainWindow::on_verticalSlider_sliderMoved(int position)
 {
     QString label = QString::number(position);
@@ -25,6 +22,7 @@ void MainWindow::on_verticalSlider_sliderMoved(int position)
     ui->percentPowerlabel->setText(label);
     connection::setSpeed(position);
 }
+
 void MainWindow::on_actionConnect_triggered()//"connect" menubar item
 {
     loginDialog login_dialog;
@@ -38,3 +36,29 @@ void MainWindow::on_actionConnect_triggered()//"connect" menubar item
         }
     }
 }
+
+void MainWindow::on_RightMotorControl_pressed()
+{
+    connection::setRightMotorState(true);
+}
+
+/*void MainWindow::on_RightMotorControl_released()
+{
+    connection::setRightMotorState(false);
+}
+
+void MainWindow::on_LeftMotorControl_pressed()
+{
+    connection::setLeftMotorState(true);
+}
+
+void MainWindow::on_LeftMotorControl_released()
+{
+    connection::setLeftMotorState(false);
+}
+
+void MainWindow::on_stopMotorsControl_clicked()
+{
+    connection::setLeftMotorState(false);
+    connection::setRightMotorState(false);
+}*/
