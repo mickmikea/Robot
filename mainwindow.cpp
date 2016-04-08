@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "logindialog.h"
+#include "connectionfunctions.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -16,17 +17,20 @@ void MainWindow::on_RightMotorControl_pressed()
 {
     std::cout << "right motor pressed";
 }
-
 void MainWindow::on_verticalSlider_sliderMoved(int position)
 {
     QString label = QString::number(position);
     label.append("%");
     ui->percentPowerlabel->setText(label);
+    connection::setSpeed(position);
 }
-
-void MainWindow::on_actionConnect_triggered()
+void MainWindow::on_actionConnect_triggered()//"connect" menubar item
 {
     loginDialog login_dialog;
     login_dialog.setModal(true);
-    login_dialog.exec();
+    if (login_dialog.exec() == true){
+        if (connection::connect() != 0){
+            h
+        }
+    }
 }
