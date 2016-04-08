@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include "logindialog.h"
 #include "connectionfunctions.h"
+#include "errordialog.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -30,7 +31,10 @@ void MainWindow::on_actionConnect_triggered()//"connect" menubar item
     login_dialog.setModal(true);
     if (login_dialog.exec() == true){
         if (connection::connect() != 0){
-            h
+            errorDialog error_dialog;
+            error_dialog.setModal(true);
+            error_dialog.setText();
+            error_dialog.exec();
         }
     }
 }

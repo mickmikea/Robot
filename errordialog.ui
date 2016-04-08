@@ -38,6 +38,19 @@
     <set>QDialogButtonBox::Ok</set>
    </property>
   </widget>
+  <widget class="QLabel" name="messageText">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>25</y>
+     <width>311</width>
+     <height>101</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>
