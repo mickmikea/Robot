@@ -4,19 +4,20 @@
 #include <QDialog>
 
 namespace Ui {
-class errorDialog;
+class errordialog;
 }
 
-class errorDialog : public QDialog
+class errordialog : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit errorDialog(QWidget *parent = 0);
-    ~errorDialog();
+    void setText(QString text);
+    explicit errordialog(QWidget *parent = 0);
+    ~errordialog();
 
 private:
-    Ui::errorDialog *ui;
+    Ui::errordialog *ui;
 };
 
 #endif // ERRORDIALOG_H

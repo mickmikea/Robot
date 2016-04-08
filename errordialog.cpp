@@ -1,14 +1,19 @@
 #include "errordialog.h"
 #include "ui_errordialog.h"
 
-errorDialog::errorDialog(QWidget *parent) :
+errordialog::errordialog(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::errorDialog)
+    ui(new Ui::errordialog)
 {
     ui->setupUi(this);
 }
 
-errorDialog::~errorDialog()
+void errordialog::setText(QString text)
+{
+    ui->messageText->setText(text);
+}
+
+errordialog::~errordialog()
 {
     delete ui;
 }

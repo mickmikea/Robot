@@ -31,9 +31,9 @@ void MainWindow::on_actionConnect_triggered()//"connect" menubar item
     login_dialog.setModal(true);
     if (login_dialog.exec() == true){
         if (connection::connect() != 0){
-            errorDialog error_dialog;
+            errordialog error_dialog;
             error_dialog.setModal(true);
-            error_dialog.setText();
+            error_dialog.setText("test");
             error_dialog.exec();
         }
     }
