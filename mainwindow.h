@@ -2,7 +2,6 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QAbstractButton>
 #include <iostream>
 #include <string>
 
@@ -20,13 +19,19 @@ public:
 
 private slots:
 
-
-
-    void on_RightMotorControl_pressed();
-
     void on_verticalSlider_sliderMoved(int position);
 
     void on_actionConnect_triggered();
+
+    void on_RightMotorControl_pressed();
+
+    void on_RightMotorControl_released();
+
+    void on_LeftMotorControl_pressed();
+
+    void on_LeftMotorControl_released();
+
+    void on_stopMotorsControl_clicked();
 
 private:
     Ui::MainWindow *ui;

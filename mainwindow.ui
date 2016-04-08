@@ -30,9 +30,6 @@
         </property>
        </widget>
       </item>
-      <item row="0" column="0">
-       <widget class="QColumnView" name="columnView"/>
-      </item>
       <item row="0" column="2">
        <widget class="QLabel" name="percentPowerlabel">
         <property name="minimumSize">
@@ -43,6 +40,25 @@
         </property>
         <property name="text">
          <string>0%  </string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0" rowspan="2">
+       <widget class="QColumnView" name="columnView"/>
+      </item>
+      <item row="1" column="1" colspan="2">
+       <widget class="QSlider" name="cameraMovementSlider">
+        <property name="minimum">
+         <number>-100</number>
+        </property>
+        <property name="maximum">
+         <number>100</number>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="tickPosition">
+         <enum>QSlider::TicksBelow</enum>
         </property>
        </widget>
       </item>
@@ -77,7 +93,7 @@
        </spacer>
       </item>
       <item row="0" column="3">
-       <widget class="QPushButton" name="pushButton_3">
+       <widget class="QPushButton" name="stopMotorsControl">
         <property name="text">
          <string>Stop Motors</string>
         </property>
@@ -104,7 +120,7 @@
        </widget>
       </item>
       <item row="0" column="1">
-       <widget class="QPushButton" name="pushButton">
+       <widget class="QPushButton" name="LeftMotorControl">
         <property name="text">
          <string>Left Motor</string>
         </property>
