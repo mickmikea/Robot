@@ -42,7 +42,7 @@ void MainWindow::on_RightMotorControl_pressed()
     connection::setRightMotorState(true);
 }
 
-/*void MainWindow::on_RightMotorControl_released()
+void MainWindow::on_RightMotorControl_released()
 {
     connection::setRightMotorState(false);
 }
@@ -61,4 +61,4 @@ void MainWindow::on_stopMotorsControl_clicked()
 {
     connection::setLeftMotorState(false);
     connection::setRightMotorState(false);
-}*/
+}

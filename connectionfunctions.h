@@ -3,8 +3,11 @@
 
 namespace connection {//you can create objects and run stuff for the functions from this.  i call these from the interface code.
     int connect();//should this return an int or maybe a connectionStatus object?
+
     void setSpeed(int speed);
+
     void setRightMotorState(bool state);
+
     void setLeftMotorState(bool state);
 
     namespace error {//there are gaps between these numbers so that future errors can be added

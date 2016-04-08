@@ -4,7 +4,6 @@
 #include <QMainWindow>
 #include <iostream>
 #include <string>
-#include "connectionfunctions.h"
 
 namespace Ui {
 class MainWindow;
@@ -26,13 +25,13 @@ private slots:
 
     void on_RightMotorControl_pressed();
 
-    /*void on_RightMotorControl_released();
+    void on_RightMotorControl_released();
 
     void on_LeftMotorControl_pressed();
 
     void on_LeftMotorControl_released();
 
-    void on_stopMotorsControl_clicked();*/
+    void on_stopMotorsControl_clicked();
 
 private:
     Ui::MainWindow *ui;
