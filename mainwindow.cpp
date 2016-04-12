@@ -10,9 +10,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow){
     ui->setupUi(this);
     this->setFocusPolicy(Qt::StrongFocus);
-    /*ui->RightMotorControl->setShortcut(Qt::Key_D);
-    ui->LeftMotorControl->setShortcut(Qt::Key_A);
-    ui->stopMotorsControl->setShortcut(Qt::Key_S);*/
+    ui->centralWidget->setFocus();
+
     }
 
 MainWindow::~MainWindow(){
@@ -31,7 +30,7 @@ void MainWindow::on_actionConnect_triggered()//"connect" menubar item
 {
     loginDialog login_dialog;
     login_dialog.setModal(true);
-    if (login_dialog.exec() == true){
+    if (login_dialog.exec() == loginDialog::Accepted){
         int connectionCode = connection::connect();
         if (connectionCode != 0){
             errordialog error_dialog;
@@ -76,5 +75,48 @@ void MainWindow::on_cameraMovementSlider_sliderMoved(int position)
 
 void MainWindow::keyPressEvent(QKeyEvent *event)
 {
-    qDebug() << event->key();
+    if (event->key() == Qt::Key_D){
+        connection::setRightMotorState(true);
+    }
+    else if (event->key() == Qt::Key_A){
+        connection::setLeftMotorState(true);
+    }
+    else if (event->key() == Qt::Key_S){
+        connection::setRightMotorState(false);
+        connection::setLeftMotorState(false);
+    }
+    else if (event->key() == Qt::Key_Up){
+        ui->verticalSlider->setSliderPosition(ui->verticalSlider->sliderPosition() + 4);
+        QString label = QString::number(ui->verticalSlider->sliderPosition());
+        label.append("%");
+        ui->percentPowerlabel->setText(label);\
+        connection::setSpeed(ui->verticalSlider->sliderPosition());
+    }
+    else if (event->key() == Qt::Key_Down){
+        ui->verticalSlider->setSliderPosition(ui->verticalSlider->sliderPosition() - 4);
+        QString label = QString::number(ui->verticalSlider->sliderPosition());
+        label.append("%");
+        ui->percentPowerlabel->setText(label);
+        connection::setSpeed(ui->verticalSlider->sliderPosition());
+    }
+    else if (event->key() == Qt::Key_Left){
+        ui->cameraMovementSlider->setSliderPosition(ui->cameraMovementSlider->sliderPosition() - 7);
+        ui->cameraPositionLabel->setText(QString::number(ui->cameraMovementSlider->sliderPosition()));
+        connection::setCameraPosition(ui->cameraMovementSlider->sliderPosition());
+    }
+    else if (event->key() == Qt::Key_Right){
+        ui->cameraMovementSlider->setSliderPosition(ui->cameraMovementSlider->sliderPosition() + 7);
+        ui->cameraPositionLabel->setText(QString::number(ui->cameraMovementSlider->sliderPosition()));
+        connection::setCameraPosition(ui->cameraMovementSlider->sliderPosition());
+    }
+}
+
+void MainWindow::keyReleaseEvent(QKeyEvent *event)
+{
+    if (event->key() == Qt::Key_D){
+        connection::setRightMotorState(false);
+    }
+    else if (event->key() == Qt::Key_A){
+        connection::setLeftMotorState(false);
+    }
 }
