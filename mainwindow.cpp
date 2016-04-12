@@ -3,14 +3,16 @@
 #include "logindialog.h"
 #include "errordialog.h"
 #include "connectionfunctions.h"
+#include <QDebug>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow){
     ui->setupUi(this);
-    ui->RightMotorControl->setShortcut(Qt::Key_D);
+    this->setFocusPolicy(Qt::StrongFocus);
+    /*ui->RightMotorControl->setShortcut(Qt::Key_D);
     ui->LeftMotorControl->setShortcut(Qt::Key_A);
-    ui->stopMotorsControl->setShortcut(Qt::Key_S);
+    ui->stopMotorsControl->setShortcut(Qt::Key_S);*/
     }
 
 MainWindow::~MainWindow(){
@@ -70,4 +72,9 @@ void MainWindow::on_cameraMovementSlider_sliderMoved(int position)
 {
     ui->cameraPositionLabel->setText(QString::number(position));
     connection::setCameraPosition(position);
+}
+
+void MainWindow::keyPressEvent(QKeyEvent *event)
+{
+    qDebug() << event->key();
 }
