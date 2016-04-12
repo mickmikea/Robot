@@ -3,12 +3,16 @@
 #include "logindialog.h"
 #include "errordialog.h"
 #include "connectionfunctions.h"
+#include <QDebug>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow){
     ui->setupUi(this);
-
+    this->setFocusPolicy(Qt::StrongFocus);
+    /*ui->RightMotorControl->setShortcut(Qt::Key_D);
+    ui->LeftMotorControl->setShortcut(Qt::Key_A);
+    ui->stopMotorsControl->setShortcut(Qt::Key_S);*/
     }
 
 MainWindow::~MainWindow(){
@@ -28,10 +32,11 @@ void MainWindow::on_actionConnect_triggered()//"connect" menubar item
     loginDialog login_dialog;
     login_dialog.setModal(true);
     if (login_dialog.exec() == true){
-        if (connection::connect() != 0){
+        int connectionCode = connection::connect();
+        if (connectionCode != 0){
             errordialog error_dialog;
             error_dialog.setModal(true);
-            error_dialog.setText("test");
+            error_dialog.setText(connectionCode);
             error_dialog.exec();
         }
     }
@@ -61,4 +66,15 @@ void MainWindow::on_stopMotorsControl_clicked()
 {
     connection::setLeftMotorState(false);
     connection::setRightMotorState(false);
+}
+
+void MainWindow::on_cameraMovementSlider_sliderMoved(int position)
+{
+    ui->cameraPositionLabel->setText(QString::number(position));
+    connection::setCameraPosition(position);
+}
+
+void MainWindow::keyPressEvent(QKeyEvent *event)
+{
+    qDebug() << event->key();
 }

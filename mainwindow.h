@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <iostream>
 #include <string>
+#include <QKeyEvent>
 
 namespace Ui {
 class MainWindow;
@@ -16,6 +17,8 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
+
+    void keyPressEvent(QKeyEvent* event) override;
 
 private slots:
 
@@ -33,8 +36,10 @@ private slots:
 
     void on_stopMotorsControl_clicked();
 
+    void on_cameraMovementSlider_sliderMoved(int position);
+
 private:
-    Ui::MainWindow *ui;
+    Ui::MainWindow* ui;
 };
 
 #endif // MAINWINDOW_H
