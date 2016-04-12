@@ -8,7 +8,9 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow){
     ui->setupUi(this);
-
+    ui->RightMotorControl->setShortcut(Qt::Key_D);
+    ui->LeftMotorControl->setShortcut(Qt::Key_A);
+    ui->stopMotorsControl->setShortcut(Qt::Key_S);
     }
 
 MainWindow::~MainWindow(){

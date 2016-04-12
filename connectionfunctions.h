@@ -4,7 +4,7 @@
 namespace connection {
     //you can create objects and run stuff for the functions from this.  i call these from the interface code.
 
-    int connect();//should this return an int or maybe a connectionStatus object?
+    int connect();//should this return an int or maybe a connection::error?
 
     void setSpeed(int speed);
 

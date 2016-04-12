@@ -2,7 +2,7 @@
 
 int connection::connect()
 {
-    return 10;//you can replace this...
+    return 10;
 }
 void connection::setSpeed(int speed)
 {
