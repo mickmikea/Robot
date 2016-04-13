@@ -20,6 +20,8 @@ public:
 
     void keyPressEvent(QKeyEvent* event) override;
 
+    void keyReleaseEvent(QKeyEvent *event) override;
+
 private slots:
 
     void on_verticalSlider_sliderMoved(int position);
