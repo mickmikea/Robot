@@ -6,6 +6,7 @@ errordialog::errordialog(QWidget *parent) :
     ui(new Ui::errordialog)
 {
     ui->setupUi(this);
+    ui->focusHolder->setFocus();
 }
 
 void errordialog::setText(int code)
