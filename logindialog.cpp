@@ -7,6 +7,7 @@ loginDialog::loginDialog(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->passwordBox->setEchoMode(QLineEdit::Password);
+    ui->usernameBox->setFocus();
 }
 
 loginDialog::~loginDialog()

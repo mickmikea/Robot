@@ -86,26 +86,26 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
         connection::setLeftMotorState(false);
     }
     else if (event->key() == Qt::Key_Up){
-        ui->verticalSlider->setSliderPosition(ui->verticalSlider->sliderPosition() + 4);
+        ui->verticalSlider->setSliderPosition(ui->verticalSlider->sliderPosition() + 10);
         QString label = QString::number(ui->verticalSlider->sliderPosition());
         label.append("%");
         ui->percentPowerlabel->setText(label);\
         connection::setSpeed(ui->verticalSlider->sliderPosition());
     }
     else if (event->key() == Qt::Key_Down){
-        ui->verticalSlider->setSliderPosition(ui->verticalSlider->sliderPosition() - 4);
+        ui->verticalSlider->setSliderPosition(ui->verticalSlider->sliderPosition() - 10);
         QString label = QString::number(ui->verticalSlider->sliderPosition());
         label.append("%");
         ui->percentPowerlabel->setText(label);
         connection::setSpeed(ui->verticalSlider->sliderPosition());
     }
     else if (event->key() == Qt::Key_Left){
-        ui->cameraMovementSlider->setSliderPosition(ui->cameraMovementSlider->sliderPosition() - 7);
+        ui->cameraMovementSlider->setSliderPosition(ui->cameraMovementSlider->sliderPosition() - 10);
         ui->cameraPositionLabel->setText(QString::number(ui->cameraMovementSlider->sliderPosition()));
         connection::setCameraPosition(ui->cameraMovementSlider->sliderPosition());
     }
     else if (event->key() == Qt::Key_Right){
-        ui->cameraMovementSlider->setSliderPosition(ui->cameraMovementSlider->sliderPosition() + 7);
+        ui->cameraMovementSlider->setSliderPosition(ui->cameraMovementSlider->sliderPosition() + 10);
         ui->cameraPositionLabel->setText(QString::number(ui->cameraMovementSlider->sliderPosition()));
         connection::setCameraPosition(ui->cameraMovementSlider->sliderPosition());
     }
