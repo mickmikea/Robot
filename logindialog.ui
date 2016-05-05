@@ -41,27 +41,17 @@
     <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
    </property>
   </widget>
-  <widget class="QLineEdit" name="usernameBox">
+  <widget class="QLineEdit" name="hostBox">
    <property name="geometry">
     <rect>
-     <x>162</x>
+     <x>160</x>
      <y>70</y>
      <width>221</width>
      <height>21</height>
     </rect>
    </property>
   </widget>
-  <widget class="QLineEdit" name="passwordBox">
-   <property name="geometry">
-    <rect>
-     <x>162</x>
-     <y>100</y>
-     <width>221</width>
-     <height>21</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLabel" name="usernameLabel">
+  <widget class="QLabel" name="hostLabel">
    <property name="geometry">
     <rect>
      <x>90</x>
@@ -71,10 +61,10 @@
     </rect>
    </property>
    <property name="text">
-    <string>Username:</string>
+    <string>Host:</string>
    </property>
   </widget>
-  <widget class="QLabel" name="passwordLabel">
+  <widget class="QLabel" name="portLabel">
    <property name="geometry">
     <rect>
      <x>90</x>
@@ -84,7 +74,7 @@
     </rect>
    </property>
    <property name="text">
-    <string> Password:</string>
+    <string>Port:</string>
    </property>
   </widget>
   <widget class="QLabel" name="mainText">
@@ -99,6 +89,19 @@
    <property name="text">
     <string>Please enter the username@ip and password
  of your QtPi.</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="portBox">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>100</y>
+     <width>221</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>33493</string>
    </property>
   </widget>
  </widget>

@@ -6,11 +6,27 @@ loginDialog::loginDialog(QWidget *parent) :
     ui(new Ui::loginDialog)
 {
     ui->setupUi(this);
-    ui->passwordBox->setEchoMode(QLineEdit::Password);
-    ui->usernameBox->setFocus();
+    ui->hostBox->setFocus();
 }
 
 loginDialog::~loginDialog()
 {
     delete ui;
+}
+
+QString loginDialog::getHostname()
+{
+    return ui->hostBox->text();
+}
+
+int loginDialog::getPort()
+{
+    bool ok;
+    int port = ui->portBox->text().toInt(&ok);
+
+    if(!ok) {
+        return -1;
+    }
+
+    return port;
 }

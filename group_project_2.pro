@@ -4,24 +4,23 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = group_project_2
 TEMPLATE = app
 
-
 SOURCES += main.cpp\
         mainwindow.cpp \
     logindialog.cpp \
     errordialog.cpp \
-    connectionfunctions.cpp
+    connection.cpp
 
 HEADERS  += mainwindow.h \
     logindialog.h \
-    connectionfunctions.h \
-    errordialog.h
+    errordialog.h \
+    connection.h
 
 FORMS    += mainwindow.ui \
     logindialog.ui \

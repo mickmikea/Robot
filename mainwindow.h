@@ -1,6 +1,7 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include "connection.h"
 #include <QMainWindow>
 #include <iostream>
 #include <string>
@@ -36,12 +37,15 @@ private slots:
 
     void on_LeftMotorControl_released();
 
-    void on_stopMotorsControl_clicked();
-
     void on_cameraMovementSlider_sliderMoved(int position);
+
+    void on_stopMotorsControl_pressed();
+
+    void on_stopMotorsControl_released();
 
 private:
     Ui::MainWindow* ui;
+    connection con;
 };
 
 #endif // MAINWINDOW_H

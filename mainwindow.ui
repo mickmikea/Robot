@@ -102,7 +102,7 @@
       <item row="0" column="3">
        <widget class="QPushButton" name="stopMotorsControl">
         <property name="text">
-         <string>Stop Motors</string>
+         <string>Forward</string>
         </property>
        </widget>
       </item>
@@ -122,14 +122,14 @@
       <item row="0" column="5">
        <widget class="QPushButton" name="RightMotorControl">
         <property name="text">
-         <string>Right Motor</string>
+         <string>Right</string>
         </property>
        </widget>
       </item>
       <item row="0" column="1">
        <widget class="QPushButton" name="LeftMotorControl">
         <property name="text">
-         <string>Left Motor</string>
+         <string>Left</string>
         </property>
        </widget>
       </item>
@@ -180,7 +180,7 @@
      <x>0</x>
      <y>0</y>
      <width>647</width>
-     <height>22</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuConnection">
